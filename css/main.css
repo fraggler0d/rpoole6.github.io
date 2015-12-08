@@ -73,6 +73,7 @@ h3 {
 	display: inline-block;
 	width: 22%;
 	text-align: left;
+	vertical-align: top;
 }
 
 
@@ -83,7 +84,7 @@ h3 {
 
 .l-home .site-masthead {
 	position: absolute;
-	z-index: 2;
+	z-index: 3;
 	top: 0;
 	left: 0;
 	width: 100%;
@@ -93,15 +94,13 @@ h3 {
 .site-masthead__toggle {
 	position: relative;
 	z-index: 20;
-	background-color: #fff;
+	background-color: transparent;
 }
 
 .site-masthead__menu {
 	position: fixed;
-	top: 0;
-	right: 0;
-	bottom: 0;
-	left: 0;
+	max-height: 0;
+	overflow: hidden;
 	z-index: 1;
 	background: #000;
 	transition: all .3s ease-out;
@@ -111,7 +110,13 @@ h3 {
 
 .show-nav .site-masthead__menu {
 	opacity: 1;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	max-height: 100%;
 	z-index: 10;
+	transition-duration: .2s;
 }
 
 
@@ -161,6 +166,16 @@ h3 {
 	width: 100%;
 }
 
+.featured-item__link:link,
+.featured-item__link:active,
+.featured-item__link:visited {
+	color: #fff;
+}
+
+.featured-item__link:hover,
+.featured-item__link:focus {
+	color: silver;
+}
 
 
 .knockout {
@@ -168,5 +183,36 @@ h3 {
 	padding: .5em;
 	font-size: 36px;
 	color: #fff;
-	background-color: rgba(200, 175, 10, .8);
+	background-color: silver;
+	opacity: 0%;
+}
+
+.featured-list__item {
+	overflow: hidden;
+}
+
+.featured-list__item,
+.featured-item__link {
+	position: relative;
+}
+
+
+.featured-item__link {
+	display: block;
+	padding: 200px 0;
+}
+
+.featured-item__body {
+	position: relative;
+	z-index: 10;
+	background-color: transparent;
+}
+
+.featured-item__img {
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 1;
+	width: 100%;
+	height: auto;
 }

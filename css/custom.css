@@ -64,7 +64,7 @@
 
 body {
 	font-family: 'neouthin', 'raleway', helvetica neue, helvetica, arial, sans-serif;
-	background-color: silver;
+	background-color: white;
 }
 
 
@@ -79,19 +79,19 @@ body {
 
 
 .site-masthead__menu {
-	background-color: #23201F;
+	background-color: black;
 }
 
 
 .l-home .site-masthead__logo {
-	color: #23201F;
+	color: silver;
 }
 
 
 .l-posts .site-content,
 .l-post-detail .site-content {
 	padding: 54px 0;
-	background: silver;
+	background: white;
 }
 
 .entry__content {
@@ -102,7 +102,6 @@ body {
 	margin-top: 15px;
 }
 
-
 .site-masthead__menu {
-	background-color: grey;
+	background-color: white;
 }

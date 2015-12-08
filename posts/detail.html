@@ -65,11 +65,13 @@ Licensed MIT
 			var refs = ( doc.body || doc.getElementsByTagName( "head" )[ 0 ] ).childNodes;
 			ref = refs[ refs.length - 1];
 		}
+
 		var sheets = doc.styleSheets;
 		ss.rel = "stylesheet";
 		ss.href = href;
 		// temporarily set media to something inapplicable to ensure it'll fetch without blocking render
 		ss.media = "only x";
+
 		// Inject link
 			// Note: the ternary preserves the existing behavior of "before" argument, but we could choose to change the argument to "after" in a later release and standardize on ref.nextSibling for all refs
 			// Note: `insertBefore` is used instead of `appendChild`, for safety re: http://www.paulirish.com/2011/surefire-dom-element-insertion/
@@ -87,6 +89,7 @@ Licensed MIT
 				onloadcssdefined( cb );
 			});
 		};
+
 		// once loaded, set link's media back to `all` so that the stylesheet applies once it loads
 		ss.onloadcssdefined = onloadcssdefined;
 		onloadcssdefined(function() {
@@ -102,6 +105,7 @@ Licensed MIT
 		w.loadCSS = loadCSS;
 	}
 }( typeof global !== "undefined" ? global : this ));
+
     </script>
     
     
@@ -116,7 +120,7 @@ Licensed MIT
     <!-- Modernizr detects a browsers different capabilities -->
     <script src="../js/vendor/modernizr-2.8.3.min.js"></script>
   </head>
-  <body class="l-posts">
+  <body class="l-post-detail">
     <!--[if lt IE 8]>
         <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
@@ -152,102 +156,41 @@ Licensed MIT
     
     
     <div class="site-content">
-    	<div class="container">
-			<ul class="grid-list">
-				<li class="grid-list__item">
-					<a class="block-overlay" href="reddit.html">
-						<img class="block-overlay__src" src="http://www.theblaze.com/wp-content/uploads/2013/06/reddit_logo.jpg" alt="">	    			
-						<h3 class="block-overlay__content">Week 1 - Reddit</h3>
-					</a>	
-				</li>
-				<li class="grid-list__item">
-					<a class="block-overlay" href="conchords_site.html">
-						<img class="block-overlay__src" src="https://c1.staticflickr.com/7/6128/6017579540_20bbed9c44_z.jpg" alt="">	    			
-						<h3 class="block-overlay__content">Week 2 - FotC</h3>
-					</a>	
-				</li>
-				<li class="grid-list__item">
-					<a class="block-overlay" href="roosterteeth.html">
-						<img class="block-overlay__src" src="https://pbs.twimg.com/profile_images/639101592050884608/3onjaduc.png" alt="">	    			
-						<h3 class="block-overlay__content">Week 3 - Rooster Teeth</h3>
-					</a>	
-				</li>
-				<li class="grid-list__item">
-					<a class="block-overlay" href="foodgawker.html">
-						<img class="block-overlay__src" src="https://pbs.twimg.com/profile_images/467806155272486913/TsTREMDb.jpeg" alt="">	    			
-						<h3 class="block-overlay__content">Website 4 - FoodGawker</h3>
-					</a>	
-				</li>
-				<li class="grid-list__item">
-					<a class="block-overlay" href="h2design.html">
-						<img class="block-overlay__src" src="http://st.hzcdn.com/fimgs/31518f55018a9dd6_3946-w500-h500-b0-p0--traditional-bathroom.jpg" alt="">	    			
-						<h3 class="block-overlay__content">Week 5 - H2 Design and Build</h3>
-					</a>	
-				</li>
-				<li class="grid-list__item">
-					<a class="block-overlay" href="thisalso.html">
-						<img class="block-overlay__src" src="http://www.awwwards.com/media/cache/thumb_sotm/awards/submissions/2015/11/565c56d20fcf7.jpg" alt="">	    			
-						<h3 class="block-overlay__content">Week 6 - This Also</h3>
-					</a>	
-				</li>
-				<li class="grid-list__item">
-					<a class="block-overlay" href="kidstudio.html">
-						<img class="block-overlay__src" src="http://cdn.siteinspire.com/screengrabs/images/000/008/395/medium.jpg" alt="">	    			
-						<h3 class="block-overlay__content">Week 7 - Kid Studio</h3>
-					</a>	
-				</li>				
-				<li class="grid-list__item">
-					<a class="block-overlay" href="ortype.html">
-						<img class="block-overlay__src" src="http://cdn.siteinspire.com/screengrabs/images/000/008/264/medium.jpg" alt="">	    			
-						<h3 class="block-overlay__content">Week 8 - Ortype</h3>
-					</a>	
-				</li>
-				<li class="grid-list__item">
-					<a class="block-overlay" href="slayyourgiant.html">
-						<img class="block-overlay__src" src="https://www.fayettesports.com/portals/39/UAREDLOGO.jpg" alt="">	    			
-						<h3 class="block-overlay__content">Week 9 - Slay Your Next Giant</h3>
-					</a>	
-				</li>				
-				<li class="grid-list__item">
-					<a class="block-overlay" href="tartelet.html">
-						<img class="block-overlay__src" src="https://i1.sndcdn.com/artworks-000117966424-2uu88i-t500x500.jpg" alt="">	    			
-						<h3 class="block-overlay__content">Week 10 - Tartelet Records</h3>
-					</a>	
-				</li>
-				<li class="grid-list__item">
-					<a class="block-overlay" href="chicks_fry_house.html">
-						<img class="block-overlay__src" src="https://carolinacoaster.com/wp-content/uploads/2015/06/Chicks-Fry-House.png" alt="">	    			
-						<h3 class="block-overlay__content">Week 11 - Chick's Fry House</h3>
-					</a>	
-				</li>				
-				<li class="grid-list__item">
-					<a class="block-overlay" href="junction_moama.html">
-						<img class="block-overlay__src" src="https://sta1.s3.amazonaws.com/organisers/189983/ukvg6Z90b0SJ70Adl_zX2w_500_500_Max.jpg" alt="">	    			
-						<h3 class="block-overlay__content">Week 12 - Junction Moama</h3>
-					</a>	
-				</li>				
-				<li class="grid-list__item">
-					<a class="block-overlay" href="100und1.html">
-						<img class="block-overlay__src" src="http://la-pause.net/wp-content/uploads/2013/12/100UND1-00.jpg" alt="">	    			
-						<h3 class="block-overlay__content">Week 13 - 100und1</h3>
-					</a>	
-				</li>
-				<li class="grid-list__item">
-					<a class="block-overlay" href="dia.html">
-						<img class="block-overlay__src" src="https://lh3.googleusercontent.com/-C7UybMbBu6Q/VUrMx7dhDgI/AAAAAAAAAS0/nm_Wd7qXX5M/s426/Profile_dia_tv.jpg" alt="">	    			
-						<h3 class="block-overlay__content">Week 14 - DIA</h3>
-					</a>	
-				</li>
-				<li class="grid-list__item">
-					<a class="block-overlay" href="founded.html">
-						<img class="block-overlay__src" src="http://cdn.siteinspire.com/screengrabs/images/000/008/020/medium.jpg" alt="">	    			
-						<h3 class="block-overlay__content">Week 15 - Founded</h3>
-					</a>	
-				</li>																				
-				<li class="grid-list__placeholder"></li>
-				<li class="grid-list__placeholder"></li>
-			</ul>
-		</div>    
+    	<article class="entry">
+    		<header class="entry__header">
+				<div class="container">
+					<h1 class="entry__heading">
+						Post Item Title
+					</h1>
+					<p class="entry__intro">
+						My super cool project about making websites for christmas cookies
+					</p>
+				</div>    		
+    		</header>
+    		
+    		<div class="entry__content">
+    		
+    			<div class="container">
+					
+					<p>This is a standard paragraph created using the WordPress TinyMCE text editor. It has a <strong>strong tag</strong>, an <em>em tag</em> and a <del>strikethrough</del> which is actually just the del element. There are a few more inline elements which are not in the WordPress admin but we should check for incase your users get busy with the copy and paste. These include <cite>citations</cite>, <abbr title="abbreviation">abbr</abbr>, bits of <code>code</code> and <var>variables</var>, <q>inline quotations</q>, <ins datetime="2011-12-08T20:19:53+00:00">inserted text</ins>, text that is <s>no longer accurate</s> or something <mark>so important</mark> you might want to mark it. We can also style subscript and superscript characters like C0<sub>2</sub>, here is our 2<sup>nd</sup> example. If they are feeling non-semantic they might even use <b>bold</b>, <i>italic</i>, <big>big</big> or <small>small</small> elements too.&nbsp;Incidentally, these HTML4.01 tags have been given new life and semantic meaning in HTML5, you may be interested in reading this <a title="HTML5 Semantics" href="http://csswizardry.com/2011/01/html5-and-text-level-semantics">article by Harry Roberts</a> which gives a nice excuse to test a link.&nbsp;&nbsp;It is also worth noting in the "kitchen sink" view you can also add <span style="text-decoration: underline;">underline</span>&nbsp;styling and set <span style="color: #ff0000;">text color</span> with pesky inline CSS.</p>
+					<p style="text-align: left;">Additionally, WordPress also sets text alignment with inline styles, like this left aligned paragraph.&nbsp;Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Cras mattis consectetur purus sit amet fermentum.</p>
+					<p style="text-align: right;">This is a right aligned paragraph.&nbsp;Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Cras mattis consectetur purus sit amet fermentum.</p>
+					<p style="text-align: justify;">This is a justified paragraph.&nbsp;Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Cras mattis consectetur purus sit amet fermentum.</p>
+					<p style="padding-left: 30px;">Finally, you also have the option of an indented paragraph.&nbsp;Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Cras mattis consectetur purus sit amet fermentum.</p> <p>And last, and by no means least, users can also apply the <code>Address</code> tag to text like this:</p> <address>123 Example Street,
+					Testville,
+					West Madeupsburg,
+					CSSland,
+					1234</address> <p>...so there you have it, all our text elements</p>
+    			</div>
+				 <!-- end .container -->
+				 
+				 <picture class="entry__full-src">
+				 	<source srcset="http://lorempixel.com/768/420, http://lorempixel.com/1500/1000 2x" media="(min-width: 768px)">
+				 	<img srcset="http://lorempixel.com/320/320, http://lorempixel.com/1080/1080 2x" alt="">
+				 </picture>				 
+				    		
+    		</div>
+    	</article>
     </div>
     
     

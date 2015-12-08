@@ -3,6 +3,7 @@ $(function (){
 		event.preventDefault();
 		
 		$('body').toggleClass('show-nav');
+		
+		
 	})
 });
-

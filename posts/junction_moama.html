@@ -65,11 +65,13 @@ Licensed MIT
 			var refs = ( doc.body || doc.getElementsByTagName( "head" )[ 0 ] ).childNodes;
 			ref = refs[ refs.length - 1];
 		}
+
 		var sheets = doc.styleSheets;
 		ss.rel = "stylesheet";
 		ss.href = href;
 		// temporarily set media to something inapplicable to ensure it'll fetch without blocking render
 		ss.media = "only x";
+
 		// Inject link
 			// Note: the ternary preserves the existing behavior of "before" argument, but we could choose to change the argument to "after" in a later release and standardize on ref.nextSibling for all refs
 			// Note: `insertBefore` is used instead of `appendChild`, for safety re: http://www.paulirish.com/2011/surefire-dom-element-insertion/
@@ -87,6 +89,7 @@ Licensed MIT
 				onloadcssdefined( cb );
 			});
 		};
+
 		// once loaded, set link's media back to `all` so that the stylesheet applies once it loads
 		ss.onloadcssdefined = onloadcssdefined;
 		onloadcssdefined(function() {
@@ -102,6 +105,7 @@ Licensed MIT
 		w.loadCSS = loadCSS;
 	}
 }( typeof global !== "undefined" ? global : this ));
+
     </script>
     
     
@@ -116,7 +120,7 @@ Licensed MIT
     <!-- Modernizr detects a browsers different capabilities -->
     <script src="../js/vendor/modernizr-2.8.3.min.js"></script>
   </head>
-  <body class="l-posts">
+  <body class="l-post-detail">
     <!--[if lt IE 8]>
         <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
@@ -131,7 +135,7 @@ Licensed MIT
 			
 				<ul class="site-masthead__primary nav" role="menubar">
 					<li class="primary__item">
-						<a class="primary__link" href="posts/index.html">
+						<a class="primary__link" href="../posts/index.html">
 							Posts
 						</a>
 					</li>
@@ -152,102 +156,35 @@ Licensed MIT
     
     
     <div class="site-content">
-    	<div class="container">
-			<ul class="grid-list">
-				<li class="grid-list__item">
-					<a class="block-overlay" href="reddit.html">
-						<img class="block-overlay__src" src="http://www.theblaze.com/wp-content/uploads/2013/06/reddit_logo.jpg" alt="">	    			
-						<h3 class="block-overlay__content">Week 1 - Reddit</h3>
-					</a>	
-				</li>
-				<li class="grid-list__item">
-					<a class="block-overlay" href="conchords_site.html">
-						<img class="block-overlay__src" src="https://c1.staticflickr.com/7/6128/6017579540_20bbed9c44_z.jpg" alt="">	    			
-						<h3 class="block-overlay__content">Week 2 - FotC</h3>
-					</a>	
-				</li>
-				<li class="grid-list__item">
-					<a class="block-overlay" href="roosterteeth.html">
-						<img class="block-overlay__src" src="https://pbs.twimg.com/profile_images/639101592050884608/3onjaduc.png" alt="">	    			
-						<h3 class="block-overlay__content">Week 3 - Rooster Teeth</h3>
-					</a>	
-				</li>
-				<li class="grid-list__item">
-					<a class="block-overlay" href="foodgawker.html">
-						<img class="block-overlay__src" src="https://pbs.twimg.com/profile_images/467806155272486913/TsTREMDb.jpeg" alt="">	    			
-						<h3 class="block-overlay__content">Website 4 - FoodGawker</h3>
-					</a>	
-				</li>
-				<li class="grid-list__item">
-					<a class="block-overlay" href="h2design.html">
-						<img class="block-overlay__src" src="http://st.hzcdn.com/fimgs/31518f55018a9dd6_3946-w500-h500-b0-p0--traditional-bathroom.jpg" alt="">	    			
-						<h3 class="block-overlay__content">Week 5 - H2 Design and Build</h3>
-					</a>	
-				</li>
-				<li class="grid-list__item">
-					<a class="block-overlay" href="thisalso.html">
-						<img class="block-overlay__src" src="http://www.awwwards.com/media/cache/thumb_sotm/awards/submissions/2015/11/565c56d20fcf7.jpg" alt="">	    			
-						<h3 class="block-overlay__content">Week 6 - This Also</h3>
-					</a>	
-				</li>
-				<li class="grid-list__item">
-					<a class="block-overlay" href="kidstudio.html">
-						<img class="block-overlay__src" src="http://cdn.siteinspire.com/screengrabs/images/000/008/395/medium.jpg" alt="">	    			
-						<h3 class="block-overlay__content">Week 7 - Kid Studio</h3>
-					</a>	
-				</li>				
-				<li class="grid-list__item">
-					<a class="block-overlay" href="ortype.html">
-						<img class="block-overlay__src" src="http://cdn.siteinspire.com/screengrabs/images/000/008/264/medium.jpg" alt="">	    			
-						<h3 class="block-overlay__content">Week 8 - Ortype</h3>
-					</a>	
-				</li>
-				<li class="grid-list__item">
-					<a class="block-overlay" href="slayyourgiant.html">
-						<img class="block-overlay__src" src="https://www.fayettesports.com/portals/39/UAREDLOGO.jpg" alt="">	    			
-						<h3 class="block-overlay__content">Week 9 - Slay Your Next Giant</h3>
-					</a>	
-				</li>				
-				<li class="grid-list__item">
-					<a class="block-overlay" href="tartelet.html">
-						<img class="block-overlay__src" src="https://i1.sndcdn.com/artworks-000117966424-2uu88i-t500x500.jpg" alt="">	    			
-						<h3 class="block-overlay__content">Week 10 - Tartelet Records</h3>
-					</a>	
-				</li>
-				<li class="grid-list__item">
-					<a class="block-overlay" href="chicks_fry_house.html">
-						<img class="block-overlay__src" src="https://carolinacoaster.com/wp-content/uploads/2015/06/Chicks-Fry-House.png" alt="">	    			
-						<h3 class="block-overlay__content">Week 11 - Chick's Fry House</h3>
-					</a>	
-				</li>				
-				<li class="grid-list__item">
-					<a class="block-overlay" href="junction_moama.html">
-						<img class="block-overlay__src" src="https://sta1.s3.amazonaws.com/organisers/189983/ukvg6Z90b0SJ70Adl_zX2w_500_500_Max.jpg" alt="">	    			
-						<h3 class="block-overlay__content">Week 12 - Junction Moama</h3>
-					</a>	
-				</li>				
-				<li class="grid-list__item">
-					<a class="block-overlay" href="100und1.html">
-						<img class="block-overlay__src" src="http://la-pause.net/wp-content/uploads/2013/12/100UND1-00.jpg" alt="">	    			
-						<h3 class="block-overlay__content">Week 13 - 100und1</h3>
-					</a>	
-				</li>
-				<li class="grid-list__item">
-					<a class="block-overlay" href="dia.html">
-						<img class="block-overlay__src" src="https://lh3.googleusercontent.com/-C7UybMbBu6Q/VUrMx7dhDgI/AAAAAAAAAS0/nm_Wd7qXX5M/s426/Profile_dia_tv.jpg" alt="">	    			
-						<h3 class="block-overlay__content">Week 14 - DIA</h3>
-					</a>	
-				</li>
-				<li class="grid-list__item">
-					<a class="block-overlay" href="founded.html">
-						<img class="block-overlay__src" src="http://cdn.siteinspire.com/screengrabs/images/000/008/020/medium.jpg" alt="">	    			
-						<h3 class="block-overlay__content">Week 15 - Founded</h3>
-					</a>	
-				</li>																				
-				<li class="grid-list__placeholder"></li>
-				<li class="grid-list__placeholder"></li>
-			</ul>
-		</div>    
+    	<article class="entry">
+    		<header class="entry__header">
+				<div class="container">
+					<h1 class="entry__heading">
+						Interesting Web Stuff
+					</h1>
+					<p class="entry__intro">
+						<h3>Week 12 - Junction Moama</h3>
+					</p>
+				</div>    		
+    		</header>
+    		
+    		<div class="entry__content">
+    		
+    			<div class="container">
+					
+					<p style="padding-left: 30px;">This site for the restaurant <a href="http://junctionmoama.com.au/">Junction Moama
+					</a> gave me an idea of how I would change my own restaurant site's page, if I had the knowhow to do it. It's 
+					smooth, and all the transitions are sleek.
+    			</div>
+				 <!-- end .container -->
+				 
+				 <picture class="entry__full-src">
+				 	<source srcset="http://lorempixel.com/768/420, http://lorempixel.com/1500/1000 2x" media="(min-width: 768px)">
+				 	<img srcset="http://lorempixel.com/320/320, http://lorempixel.com/1080/1080 2x" alt="">
+				 </picture>				 
+				    		
+    		</div>
+    	</article>
     </div>
     
     

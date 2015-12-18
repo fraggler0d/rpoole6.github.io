@@ -8,11 +8,50 @@ img,
 video,
 embed,
 iframe {
-	max-width: 100%;
+	max-width: 75%;
 	height: auto;
 }
 
+.l-post-reddit {
+	background-color: #A9E2F3;
+}
 
+.l-post-fotc {
+	background-color: #FE9A2E;
+}
+
+.l-post-roosterteeth {
+	background-color: #B22222;
+}
+
+.l-post-foodgawker,
+.l-post-junction,
+.l-post-h2design {
+	background-color: #DCDCDC;
+}
+
+.l-post-thisalso,
+.l-post-tartelet {
+	background-color: #696969;
+}
+
+.l-post-kidstudio,
+.l-post-underarmour,
+.l-post-100und1 {
+	background-color: black;
+}
+
+.l-post-chicks {
+	background-color: #FF0000;
+}
+
+.l-post-dia {
+	background-color: #48D1CC;
+}
+
+.l-post-founded {
+	background-color: #800000;
+}
 
 body {
   font-weight: normal;
@@ -56,16 +95,15 @@ h3 {
 
 
 .grid-list {
-	padding-left: 0;
-	margin-left: 0;
-	list-style: none;
-	text-align: justify;
+  	margin-bottom: 40px;
+  	text-align: justify;
 }
 
 .grid-list:after {
 	content: '';
 	display: inline-block;
 	width: 100%;
+  	font-size: 10px;
 }
 
 .grid-list__item,
@@ -116,7 +154,7 @@ h3 {
 	left: 0;
 	max-height: 100%;
 	z-index: 10;
-	transition-duration: .2s;
+	transition-duration: .6s;
 }
 
 
@@ -215,4 +253,21 @@ h3 {
 	z-index: 1;
 	width: 100%;
 	height: auto;
+}
+
+.block-overlay:link,
+.block-overlay:active,
+.block-overlay:visited {
+	color: #000;
+	font-size: 12px;
+}	
+
+
+.block-overlay:hover,
+.block-overlay:focus {
+	color: silver;
+}
+
+.l-posts {
+	background-color: silver;
 }
